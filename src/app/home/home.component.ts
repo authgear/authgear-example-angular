@@ -47,4 +47,19 @@ export class HomeComponent implements OnInit {
         }
       );
   }
+
+  logout(): void {
+    authgear
+      .logout({
+        redirectURI: 'http://localhost:4000/',
+      })
+      .then(
+        () => {
+          this.greetingMessage = '';
+        },
+        (err) => {
+          console.error(err);
+        }
+      );
+  }
 }

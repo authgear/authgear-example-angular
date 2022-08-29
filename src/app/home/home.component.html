@@ -4,3 +4,6 @@
 <div *ngIf="!user.isLoggedIn">
   <button type="button" (click)="startLogin()">Login</button>
 </div>
+<div *ngIf="user.isLoggedIn">
+  <button type="button" (click)="logout()">Logout</button>
+</div>
