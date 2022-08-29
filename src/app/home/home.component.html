@@ -6,4 +6,8 @@
 </div>
 <div *ngIf="user.isLoggedIn">
   <button type="button" (click)="logout()">Logout</button>
+  <br />
+  <a target="_blank" rel="noreferrer" (click)="userSetting($event)" href="#">
+    User Setting
+  </a>
 </div>

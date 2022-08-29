@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import authgear from '@authgear/web';
+import authgear, { Page } from '@authgear/web';
 
 @Component({
   selector: 'app-home',
@@ -61,5 +61,11 @@ export class HomeComponent implements OnInit {
           console.error(err);
         }
       );
+  }
+
+  async userSetting(event: MouseEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+    await authgear.open(Page.Settings);
   }
 }
