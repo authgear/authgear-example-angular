@@ -8,9 +8,28 @@ import authgear from '@authgear/web';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  isLoading: boolean = false;
+  greetingMessage: string = '';
+
   constructor(public user: UserService) {}
 
-  ngOnInit(): void {}
+  async updateGreetingMessage() {
+    this.isLoading = true;
+    try {
+      if (this.user.isLoggedIn) {
+        const userInfo = await authgear.fetchUserInfo();
+        this.greetingMessage = 'The current User sub: ' + userInfo.sub;
+      }
+    } finally {
+      this.isLoading = false;
+    }
+  }
+
+  ngOnInit(): void {
+    this.updateGreetingMessage().catch((e) => {
+      console.error(e);
+    });
+  }
 
   startLogin(): void {
     authgear

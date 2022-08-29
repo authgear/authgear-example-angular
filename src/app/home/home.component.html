@@ -1,2 +1,6 @@
 <h1>Home Page</h1>
-<button type="button" (click)="startLogin()">Login</button>
+<span *ngIf="isLoading">Loading</span>
+<span *ngIf="greetingMessage">{{ greetingMessage }}</span>
+<div *ngIf="!user.isLoggedIn">
+  <button type="button" (click)="startLogin()">Login</button>
+</div>
