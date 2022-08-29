@@ -1,10 +1,16 @@
-# AuthgearExampleAngular
+# Getting Started with Authgear Angular Tutorial Demo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+This repo is the sample code of this tutorial: https://docs.authgear.com/tutorials/spa/angular
+
+You can follow the tutorial to learn how to integrate Authgear with your Angular single page applications.
+
+## Environment setup
+
+Setup the `endpoint` and `clientID` variables in `src/app/app.component.ts`.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to `http://localhost:4000/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
